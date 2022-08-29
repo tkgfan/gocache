@@ -1,8 +1,9 @@
-package golang_cache
+package main
 
 import (
 	"fmt"
-	"golang-cache/golang-cache/singleflight"
+	pb "golang-cache/gocachepb"
+	"golang-cache/singleflight"
 	"log"
 	"sync"
 )
@@ -88,11 +89,18 @@ func (g *Group) load(key string) (value ByteView, err error) {
 
 // 访问远程节点，获取缓存值。
 func (g *Group) getFromPeer(peer PeerGetter, key string) (ByteView, error) {
-	bytes, err := peer.Get(g.name, key)
+	req := &pb.Request{
+		Group: g.name,
+		Key:   key,
+	}
+
+	res := &pb.Response{}
+	err := peer.Get(req, res)
 	if err != nil {
 		return ByteView{}, err
 	}
-	return ByteView{b: bytes}, nil
+
+	return ByteView{b: res.Value}, nil
 }
 
 // GetGroup 获取一个Group实例

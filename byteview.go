@@ -1,4 +1,4 @@
-package golang_cache
+package main
 
 // ByteView 用来表示缓存值
 type ByteView struct {

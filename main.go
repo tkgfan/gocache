@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"golang-cache/tkgcache"
 	"log"
 	"net/http"
 )
@@ -14,8 +13,8 @@ var db = map[string]string{
 	"Sam":  "567",
 }
 
-func createGroup() *tkgcache.Group {
-	return tkgcache.NewGroup("scores", 2<<10, tkgcache.GetterFunc(
+func createGroup() *Group {
+	return NewGroup("scores", 2<<10, GetterFunc(
 		func(key string) ([]byte, error) {
 			log.Println("[SlowDB] search key", key)
 			if v, ok := db[key]; ok {
@@ -25,15 +24,15 @@ func createGroup() *tkgcache.Group {
 		}))
 }
 
-func startCacheServer(addr string, addrs []string, gee *tkgcache.Group) {
-	peers := tkgcache.NewHTTPPool(addr)
+func startCacheServer(addr string, addrs []string, gee *Group) {
+	peers := NewHTTPPool(addr)
 	peers.Set(addrs...)
 	gee.RegisterPeers(peers)
 	log.Println("geecache is running at", addr)
 	log.Fatal(http.ListenAndServe(addr[7:], peers))
 }
 
-func startAPIServer(apiAddr string, gee *tkgcache.Group) {
+func startAPIServer(apiAddr string, gee *Group) {
 	http.Handle("/api", http.HandlerFunc(
 		func(w http.ResponseWriter, r *http.Request) {
 			key := r.URL.Query().Get("key")

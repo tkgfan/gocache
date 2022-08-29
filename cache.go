@@ -1,7 +1,7 @@
-package golang_cache
+package main
 
 import (
-	"golang-cache/golang-cache/lru"
+	"golang-cache/lru"
 	"sync"
 )
 

@@ -5,21 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92c344ed-5946-4859-894a-d32537931b9b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tkgcache/consistenthash/consistenthash.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkgcache/consistenthash/consistenthash_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkgcache/http.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkgcache/peers.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tkgcache/singleflight/singleflight.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/golang-cache.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/byteview.go" beforeDir="false" afterPath="$PROJECT_DIR$/tkgcache/byteview.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/tkgcache/cache.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/http.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/lru/lru.go" beforeDir="false" afterPath="$PROJECT_DIR$/tkgcache/lru/lru.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/lru/lru_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tkgcache/lru/lru_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/tkgcache.go" beforeDir="false" afterPath="$PROJECT_DIR$/tkgcache/tkgcache.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/tkgcache_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tkgcache/tkgcache_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/byteview.go" beforeDir="false" afterPath="$PROJECT_DIR$/byteview.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/cache.go" beforeDir="false" afterPath="$PROJECT_DIR$/cache.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/consistenthash/consistenthash.go" beforeDir="false" afterPath="$PROJECT_DIR$/consistenthash/consistenthash.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/consistenthash/consistenthash_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/consistenthash/consistenthash_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/gocachepb/gocachepb.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/gocachepb/gocachepb.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/gocachepb/gocachepb.proto" beforeDir="false" afterPath="$PROJECT_DIR$/gocachepb/gocachepb.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/http.go" beforeDir="false" afterPath="$PROJECT_DIR$/http.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/lru/lru.go" beforeDir="false" afterPath="$PROJECT_DIR$/lru/lru.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/lru/lru_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/lru/lru_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/peers.go" beforeDir="false" afterPath="$PROJECT_DIR$/peers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/singleflight/singleflight.go" beforeDir="false" afterPath="$PROJECT_DIR$/singleflight/singleflight.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/tkgcache.go" beforeDir="false" afterPath="$PROJECT_DIR$/tkgcache.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gocache/tkgcache_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tkgcache_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,18 +66,46 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/TKG&quot;
   }
 }</component>
-  <component name="RunManager" selected="Go Test.TestGet in golang-cache/tkgcache">
-    <configuration name="go build golang-cache" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="golang-cache" />
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Takagi\workspace\tkg\golang-cache" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Test.TestGet in golang-cache">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="gocache" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
       <package value="golang-cache" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/main.go" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGet in golang-cache" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="gocache" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="golang-cache" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGet\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestGet in golang-cache/gocache" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="gocache" />
+      <working_directory value="$PROJECT_DIR$/gocache" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="golang-cache/gocache" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGet\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestGet in golang-cache/tkgcache" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="golang-cache" />
+      <module name="gocache" />
       <working_directory value="$PROJECT_DIR$/tkgcache" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
@@ -87,8 +116,20 @@
       <pattern value="^\QTestGet\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestGetterFunc_Get in golang-cache/golang-cache" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="gocache" />
+      <working_directory value="$PROJECT_DIR$/golang-cache" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="golang-cache/golang-cache" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestGetterFunc_Get\E$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestGetterFunc_Get in golang-cache/tkgcache" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="golang-cache" />
+      <module name="gocache" />
       <working_directory value="$PROJECT_DIR$/tkgcache" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
@@ -99,30 +140,30 @@
       <pattern value="^\QTestGetterFunc_Get\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestHashing in golang-cache/cache/consistenthash" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="golang-cache" />
-      <working_directory value="$PROJECT_DIR$/cache/consistenthash" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="golang-cache/cache/consistenthash" />
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="gocache" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <package value="golang-cache" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestHashing\E$" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build golang-cache" />
+      <item itemvalue="Go Test.TestGet in golang-cache" />
+      <item itemvalue="Go Test.TestGet in golang-cache/gocache" />
+      <item itemvalue="Go Test.TestGetterFunc_Get in golang-cache/golang-cache" />
       <item itemvalue="Go Test.TestGet in golang-cache/tkgcache" />
       <item itemvalue="Go Test.TestGetterFunc_Get in golang-cache/tkgcache" />
-      <item itemvalue="Go Test.TestHashing in golang-cache/cache/consistenthash" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestGet in golang-cache" />
+        <item itemvalue="Go Test.TestGet in golang-cache/gocache" />
+        <item itemvalue="Go Test.TestGetterFunc_Get in golang-cache/golang-cache" />
         <item itemvalue="Go Test.TestGet in golang-cache/tkgcache" />
         <item itemvalue="Go Test.TestGetterFunc_Get in golang-cache/tkgcache" />
-        <item itemvalue="Go Build.go build golang-cache" />
-        <item itemvalue="Go Test.TestHashing in golang-cache/cache/consistenthash" />
       </list>
     </recent_temporary>
   </component>
