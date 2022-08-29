@@ -1,4 +1,4 @@
-package cache
+package tkgcache
 
 // ByteView 用来表示缓存值
 type ByteView struct {

@@ -1,7 +1,8 @@
-package cache
+package tkgcache
 
 import (
 	"fmt"
+	"golang-cache/tkgcache/singleflight"
 	"log"
 	"sync"
 )
@@ -22,9 +23,13 @@ func (f GetterFunc) Get(key string) ([]byte, error) {
 // Group 是一个缓存命名空间，每个Group拥有一个唯一
 // 的名称name。
 type Group struct {
-	name      string
+	name string
+	// 回调函数
 	getter    Getter
 	mainCache cache
+	peers     PeerPicker
+	// 使得key只会加载一次
+	loader *singleflight.Group
 }
 
 var (
@@ -43,9 +48,51 @@ func NewGroup(name string, cacheBytes int64, getter Getter) *Group {
 		name:      name,
 		getter:    getter,
 		mainCache: cache{cacheBytes: cacheBytes},
+		loader:    &singleflight.Group{},
 	}
 	groups[name] = g
 	return g
+}
+
+// RegisterPeers 将实现了 PeerPicker 接口的 HTTPPool 注入到 Group 中。
+func (g *Group) RegisterPeers(peers PeerPicker) {
+	if g.peers != nil {
+		panic("RegisterPeerPicker called more than once")
+	}
+	g.peers = peers
+}
+
+// 使用回调函数加载数据
+func (g *Group) load(key string) (value ByteView, err error) {
+	res, err := g.loader.Do(key, func() (any, error) {
+		if g.peers != nil {
+			// 选择节点
+			if peer, ok := g.peers.PickPeer(key); ok {
+				// 从节点获取数据
+				if value, err = g.getFromPeer(peer, key); err == nil {
+					return value, nil
+				}
+				log.Println("[tkgCache] Failed to get from peer", err)
+			}
+		}
+
+		return g.getLocally(key)
+	})
+
+	if err == nil {
+		return res.(ByteView), nil
+	}
+
+	return
+}
+
+// 访问远程节点，获取缓存值。
+func (g *Group) getFromPeer(peer PeerGetter, key string) (ByteView, error) {
+	bytes, err := peer.Get(g.name, key)
+	if err != nil {
+		return ByteView{}, err
+	}
+	return ByteView{b: bytes}, nil
 }
 
 // GetGroup 获取一个Group实例
@@ -67,11 +114,6 @@ func (g *Group) Get(key string) (ByteView, error) {
 		return v, nil
 	}
 	return g.load(key)
-}
-
-// 使用回调函数加载数据
-func (g *Group) load(key string) (ByteView, error) {
-	return g.getLocally(key)
 }
 
 func (g *Group) getLocally(key string) (ByteView, error) {

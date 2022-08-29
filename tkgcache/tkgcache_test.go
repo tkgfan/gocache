@@ -1,4 +1,4 @@
-package cache
+package tkgcache
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 
 // 测试接口函数是否可以正常使用
 func TestGetterFunc_Get(t *testing.T) {
-	var f cache.Getter = cache.GetterFunc(func(key string) ([]byte, error) {
+	var f Getter = GetterFunc(func(key string) ([]byte, error) {
 		return []byte(key), nil
 	})
 	expect := []byte("key")
@@ -43,7 +43,7 @@ func TestGet(t *testing.T) {
 			t.Fatal("failed to get value of Tom")
 		}
 		if _, err := scoresGroup.Get(k); err != nil || loadCounts[k] > 1 {
-			t.Fatalf("cache %s miss", k)
+			t.Fatalf("tkgcache %s miss", k)
 		}
 	}
 
