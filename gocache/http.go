@@ -1,8 +1,8 @@
-package tkgcache
+package golang_cache
 
 import (
 	"fmt"
-	"golang-cache/tkgcache/consistenthash"
+	"golang-cache/golang-cache/consistenthash"
 	"io/ioutil"
 	"log"
 	"net/http"

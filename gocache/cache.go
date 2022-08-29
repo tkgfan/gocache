@@ -1,7 +1,7 @@
-package tkgcache
+package golang_cache
 
 import (
-	"golang-cache/tkgcache/lru"
+	"golang-cache/golang-cache/lru"
 	"sync"
 )
 

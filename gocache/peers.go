@@ -1,7 +1,7 @@
-// Package tkgcache
+// Package golang-cache
 // author tkg
 // date 2022/8/21
-package tkgcache
+package golang_cache
 
 type PeerPicker interface {
 	// PickPeer 根据key选择相应节点PeerGetter

@@ -1,4 +1,4 @@
-package tkgcache
+package golang_cache
 
 import (
 	"fmt"
@@ -43,7 +43,7 @@ func TestGet(t *testing.T) {
 			t.Fatal("failed to get value of Tom")
 		}
 		if _, err := scoresGroup.Get(k); err != nil || loadCounts[k] > 1 {
-			t.Fatalf("tkgcache %s miss", k)
+			t.Fatalf("golang-cache %s miss", k)
 		}
 	}
 

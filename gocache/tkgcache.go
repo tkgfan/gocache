@@ -1,8 +1,8 @@
-package tkgcache
+package golang_cache
 
 import (
 	"fmt"
-	"golang-cache/tkgcache/singleflight"
+	"golang-cache/golang-cache/singleflight"
 	"log"
 	"sync"
 )
